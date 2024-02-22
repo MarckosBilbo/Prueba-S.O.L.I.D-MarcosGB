@@ -1,6 +1,6 @@
 # Prueva-S.O.L.I.D-MarcosGB
 
-Repositorio --> 
+Repositorio --> https://github.com/MarckosBilbo/Prueva-S.O.L.I.D-MarcosGB
 
 
   ## **1. *Creación de una Clase Matriz en Java***
