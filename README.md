@@ -9,9 +9,9 @@ Repositorio --> https://github.com/MarckosBilbo/Prueva-S.O.L.I.D-MarcosGB
 
 ##### **[MatricesJava -->(])**
 
-Separamos el programa en tres clases que juntas permiten dar forma al ejercicio 1:
+Separamos el programa en tres partes(clases-interfaces) principales que juntas permiten dar forma al ejercicio 1:
 
-Tenemos la clase Matriz que se encarga de representar, como no, una matriz 2x2 de *Ojo* Strings(he cambiado a cadena de texto para facilitar las mejoras estéticas que quiera hacerle a dicha matriz, siendo su desempeño el mismo para este ejercicio concreto) y permite crearla gracias a un constructor que recibe un atributo matriz de Stings predefinido. Además, implementa los métodos definidos en la interfaz MatrizInterface, los cuales son "imprimir" y "transpuesta".
+Tenemos la clase Matriz que se encarga de representar, como no, una matriz 2x2 bidimensional y permite crearla gracias a un constructor que recibe un atributo matriz de Stings predefinido. Además, implementa los métodos definidos en la interfaz MatrizInterface, los cuales son "imprimir" y "transpuesta".
 
 Importante también la interfaz MatrizInterface define los métodos esenciales-básicos que que queremos que implementa la clase que represente la matriz. Esra incluye los métodos imprimir y transpuesta que se encargan de imprimir la matriz en la consola y calcular su transpuesta (huecos al revés), respectivamente.
 
