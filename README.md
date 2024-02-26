@@ -24,6 +24,14 @@ Para que nos entendamos, el programa crea una matriz con los valores metidos por
 
 ### Desarrollo que he hecho en base a lo solicitado en el punto (segundo) del proyecto:
 
-##### **[FrecuenciaCaracteres -->(https://github.com/MarckosBilbo/Tema5-Tablas-MarcosGB/blob/main/src/Ej_2/FrecuenciaCaracteres.java])**
+##### **[Pizzeria -->(])**
 
+Nuestro programita es básicamente un sistema de gestión de pedidos para un restaurante donde el usuario puede realizar varias acciones, como registrar un nuevo usuario, iniciar sesión, hacer un nuevo pedido, ver pedidos existentes y borrar pedidos existentes.
 
+Arrancamos con un menú principal donde el usuario puede seleccionar entre estas opciones. Cuando registra un nuevo usuario, se solicita información como nombre, dirección y número de teléfono, y se crea un cliente asociado. Al iniciar sesión, se verifica la autenticidad del usuario con un autenticador.
+
+Para poder hacer un pedido, se muestra un menú de pizzas disponibles y se permite al usuario seleccionar las pizzas deseadas. Después de seleccionar las pizzas, se calcula el precio total del pedido y se crea en el sistema. El usuario también puede ver los pedidos existentes y borrarlos si lo desea.
+
+El código está compuesto por clases como Main, Cliente_Implementado, Pedido_Implementado, OrderManager_Implementado, DataBaseManager_Implementado, entre otras, cada una con responsabilidades específicas para gestionar usuarios, pedidos, autenticación, gestión de la base de datos y procesamiento de pagos. El sistema utiliza una estructura de bucles y condicionales para manejar las diferentes opciones del usuario y proporciona mensajes informativos para guiar al usuario a través del proceso.
+
+A resumidas cuentas es un sistema de usuarios al que se las acredita todos los pedidos que han ido haciendo (también en el programa) puiendo mostrar y borrar todos los pedidos del usuario que tenga su sesión iniciada en ese momento. Se puede además cerrar sesión y "apagar" el programa con la opción de salir.
