@@ -1,0 +1,27 @@
+@startuml
+
+package "Ej_1" {
+    interface MatrizInterface {
+        {abstract} +imprimir()
+        {abstract} +transpuesta()
+    }
+
+    class Matriz {
+        -datos: int[][]
+        +Matriz()
+        +Matriz(datos: int[][])
+        +recogerValores(valores: int[][])
+        {abstract} +imprimir()
+        {abstract} +transpuesta()
+        -validarPosicion(fila: int, columna: int)
+    }
+
+    class MatrizException {
+        +MatrizException(mensaje: String)
+    }
+
+    MatrizInterface <|.. Matriz
+    MatrizException --|> Exception
+}
+
+@enduml

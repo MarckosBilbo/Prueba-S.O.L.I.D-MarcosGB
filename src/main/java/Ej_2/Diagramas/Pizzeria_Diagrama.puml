@@ -1,0 +1,83 @@
+@startuml
+
+class Main {
+    +main(args: String[]): void
+    -registrarNuevoUsuario(scanner: Scanner): void
+    -iniciarSesion(scanner: Scanner): void
+    -realizarPedido(cliente: Cliente_Implementado, orderManager: OrderManager_Implementado, menu: Menu_Implementado, scanner: Scanner): void
+    -verPedidos(cliente: Cliente_Implementado, orderManager: OrderManager_Implementado): void
+    -borrarPedidos(orderManager: OrderManager_Implementado): void
+}
+
+class Cliente_Implementado {
+    -nombre: String
+    -direccion: String
+    -telefono: String
+    +Cliente_Implementado(nombre: String, direccion: String, telefono: String)
+    +getNombre(): String
+    +getDireccion(): String
+    +getTelefono(): String
+}
+
+class OrderManager_Implementado {
+    -dataBaseManager: DataBaseManager_Implementado
+    -authenticator: Authenticator
+    +OrderManager_Implementado(dataBaseManager: DataBaseManager_Implementado, authenticator: Authenticator)
+    +createOrder(pedido: Pedido_Implementado): void
+    +checkOrder(): void
+    +deleteOrder(): void
+}
+
+class DataBaseManager_Implementado {
+    -estaConectado: boolean
+    -pedidos: List<Pedido_Implementado>
+    +DataBaseManager_Implementado()
+    +conectar(): void
+    +desconectar(): void
+    +insertarPedido(pedido: Pedido_Implementado): void
+    +checarPedido(): void
+    +eliminarPedido(): void
+}
+
+class Authenticator {
+    +authenticateUser(username: String, phoneNumber: String): boolean
+}
+
+class Pedido_Implementado {
+    -cliente: Cliente_Implementado
+    -pizzas: List<Pizza>
+    -precioTotal: double
+    +Pedido_Implementado(cliente: Cliente_Implementado)
+    +agregarPizza(pizza: Pizza): void
+    +calcularPrecioTotal(): void
+    +getCliente(): Cliente_Implementado
+    +getPrecioTotal(): double
+}
+
+class Pizza {
+    -nombre: String
+    -precio: double
+    +Pizza_Implementado(nombre: String, precio: double)
+    +getNombre(): String
+    +getPrecio(): double
+}
+
+class Menu_Implementado {
+    -pizzasDisponibles: List<String>
+    +obtenerPizzasDisponibles(): List<String>
+    +getPrecioPizza(nombrePizza: String): double
+}
+
+Main --> Cliente_Implementado
+Main --> OrderManager_Implementado
+Main --> Menu_Implementado
+Main --> Scanner
+OrderManager_Implementado --> DataBaseManager_Implementado
+OrderManager_Implementado --> Authenticator
+Pedido_Implementado --> Cliente_Implementado
+Pedido_Implementado --> Pizza
+DataBaseManager_Implementado --> Pedido_Implementado
+DataBaseManager_Implementado --> List
+Menu_Implementado --> List
+
+@enduml
