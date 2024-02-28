@@ -7,7 +7,7 @@ Repositorio --> https://github.com/MarckosBilbo/Prueva-S.O.L.I.D-MarcosGB
   
 ### Desarrollo que he hecho en base a lo solicitado en el punto (primero) del proyecto:
 
-##### **[MatricesJava -->(])**
+##### **[MatricesJava -->(https://github.com/MarckosBilbo/Prueba-S.O.L.I.D-MarcosGB/tree/main/src/main/java/Ej_1])**
 
 Separamos el programa en tres partes(clases-interfaces) principales que juntas permiten dar forma al ejercicio 1:
 
