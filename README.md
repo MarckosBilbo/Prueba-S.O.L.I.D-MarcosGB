@@ -24,7 +24,7 @@ Para que nos entendamos, el programa crea una matriz con los valores metidos por
 
 ### Desarrollo que he hecho en base a lo solicitado en el punto (segundo) del proyecto:
 
-##### **[Pizzeria -->(])**
+##### **[Pizzeria -->(https://github.com/MarckosBilbo/Prueba-S.O.L.I.D-MarcosGB/tree/main/src/main/java/Ej_2])**
 
 Nuestro programita es básicamente un sistema de gestión de pedidos para un restaurante donde el usuario puede realizar varias acciones, como registrar un nuevo usuario, iniciar sesión, hacer un nuevo pedido, ver pedidos existentes y borrar pedidos existentes.
 
