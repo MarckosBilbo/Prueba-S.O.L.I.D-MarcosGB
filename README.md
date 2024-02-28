@@ -1,4 +1,4 @@
-# Prueva-S.O.L.I.D-MarcosGB
+# Prueba-S.O.L.I.D-MarcosGB
 
 Repositorio --> https://github.com/MarckosBilbo/Prueva-S.O.L.I.D-MarcosGB
 
