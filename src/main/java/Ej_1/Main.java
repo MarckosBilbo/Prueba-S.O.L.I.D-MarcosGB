@@ -1,47 +1,71 @@
 package Ej_1;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Matriz matriz = new Matriz();
+        Matriz matriz;
 
-        int[][] valores = new int[2][2];
-
-        System.out.println("=======================");
         try {
+            // Pedir al usuario que ingrese el tamaño de la matriz
+            System.out.println("=================================================");
+            System.out.print("Ingrese el número de filas de la matriz: ");
+            int filas = scanner.nextInt();
+            System.out.println("=================================================");
+            System.out.print("Ingrese el número de columnas de la matriz: ");
+            int columnas = scanner.nextInt();
 
-            //pasamos pididendo valores para cada posicion de la matriz
-            for (int i = 0; i < 2; i++) {
-                for (int j = 0; j < 2; j++) {
-                    System.out.print("Mete valor en [" + (i) + "][" + (j) + "]: ");
+            // Crear la matriz con el tamaño especificado por el usuario
+            matriz = new Matriz(filas, columnas);
+
+            int[][] valores = new int[filas][columnas];
+
+            System.out.println("=======================");
+
+            // Pedir al usuario que ingrese los valores de la matriz
+            for (int i = 0; i < filas; i++) {
+                for (int j = 0; j < columnas; j++) {
+                    System.out.print("Mete valor en [" + i + "][" + j + "]: ");
                     valores[i][j] = scanner.nextInt();
                 }
             }
 
-
             System.out.println("=======================");
-            //Cogemos los valores metidos y los metemos en la instancia matriz
+
+            // Asignar los valores ingresados a la matriz
             matriz.recogerValores(valores);
+
+            // Mostrar la matriz original
             System.out.println("Matriz original:");
             System.out.println("***********************");
-            //Les enseñamos en pantalla la matiz con los datos recogidos
             matriz.imprimir();
-
 
             System.out.println("=======================");
             System.out.println("Matriz transpuesta:");
             System.out.println("***********************");
-            //Aqui hace el calculo de la trasposicion y encima lo imprime de misma manera
+            // Mostrar la matriz transpuesta
             matriz.transpuesta().imprimir();
             System.out.println("=======================");
 
-        //Si hay caulquier error en la matriz con lo de elegir posiciones (No es el caso, pero por si acaso)
         } catch (MatrizException e) {
             System.out.println("Error al ingresar valores: " + e.getMessage());
+        } catch (InputMismatchException e) {
+            System.out.println("*************************************************");
+            System.out.println("Solo puedes meter números enteros");
+            System.out.println("*************************************************");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("*************************************************");
+            System.out.println("Establece un tamaño con sentido");
+            System.out.println("*************************************************");
+        } catch (NegativeArraySizeException e) {
+            System.out.println("*************************************************");
+            System.out.println("Establece un tamaño con sentido");
+            System.out.println("*************************************************");
         } finally {
-            scanner.close();
+                scanner.close();
+            }
         }
     }
-}
+

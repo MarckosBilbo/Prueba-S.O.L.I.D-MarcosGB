@@ -6,8 +6,8 @@ public class Matriz implements MatrizInterface {
     private int[][] datos;
 
     // Constructor que inicializa la matriz con valores metidos manualmente por el usuario
-    public Matriz() {
-        datos = new int[2][2];
+    public Matriz(int filas, int columnas) {
+        datos = new int[filas][columnas];
     }
     public Matriz(int[][] datos) {
         this.datos = datos;
