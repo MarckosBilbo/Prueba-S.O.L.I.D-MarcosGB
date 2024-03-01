@@ -9,4 +9,3 @@ public interface Menu {
     // Método para obtener el precio de una pizza específica
     double getPrecioPizza(String nombrePizza);
 }
-

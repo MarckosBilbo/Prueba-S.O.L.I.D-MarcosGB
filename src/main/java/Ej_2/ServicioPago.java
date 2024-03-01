@@ -7,5 +7,3 @@ public interface ServicioPago {
     void procesarPago(double precioTotal);
 }
 
-
-

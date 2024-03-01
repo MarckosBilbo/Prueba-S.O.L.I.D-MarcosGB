@@ -15,4 +15,3 @@ public interface Pizza {
     // Establece el precio de la pizza.
     void setPrecio(double precio);
 }
-

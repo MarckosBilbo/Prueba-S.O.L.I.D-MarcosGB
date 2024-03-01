@@ -1,6 +1,7 @@
 package Ej_2;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,17 +17,16 @@ public class Main {
             System.out.println("1. Registrar nuevo usuario");
             System.out.println("2. Iniciar sesión");
             System.out.println("3. Salir");
-            int opcion = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer del scanner
+            String opcion = scanner.nextLine();
 
             switch (opcion) {
-                case 1:
+                case "1":
                     registrarNuevoUsuario(scanner);
                     break;
-                case 2:
+                case "2":
                     iniciarSesion(scanner);
                     break;
-                case 3:
+                case "3":
                     salir = true;
                     System.out.println("=============================================================================");
                     System.out.println("Saliendo del sistema...");
@@ -92,31 +92,38 @@ public class Main {
                 System.out.println("2. Ver pedidos existentes");
                 System.out.println("3. Borrar un pedido existente");
                 System.out.println("4. Cerrar sesión");
-                int opcion = scanner.nextInt();
-                scanner.nextLine(); // Limpiar el buffer del scanner
+                String opcion = scanner.nextLine();
 
-                switch (opcion) {
-                    case 1:
-                        realizarPedido(cliente, orderManager, menu, scanner);
-                        break;
-                    case 2:
-                        verPedidos(cliente, orderManager);
-                        break;
-                    case 3:
-                        borrarPedidos(orderManager);
-                        break;
-                    case 4:
-                        salir = true;
-                        break;
-                    default:
-                        System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
+                try {
+                    switch (opcion) {
+
+                        case "1":
+                            realizarPedido(cliente, orderManager, menu, scanner);
+                            break;
+                        case "2":
+                            verPedidos(cliente, orderManager);
+                            break;
+                        case "3":
+                            borrarPedidos(orderManager);
+                            break;
+                        case "4":
+                            salir = true;
+                            break;
+                        default:
+                            System.out.println("=============================================================================");
+                            System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
+                    }
+                } catch (InputMismatchException e) {
+                    System.out.println("=============================================================================");
+                    System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
                 }
             }
-        } else {
+        }else {
             System.out.println("Nombre de usuario o número de teléfono incorrecto. Por favor, inténtelo de nuevo.");
         }
     }
 
+    // Métodos para realizar un pedido
     private static void realizarPedido(Cliente_Implementado cliente, OrderManager_Implementado orderManager, Menu_Implementado menu, Scanner scanner) {
         // Crear un pedido asociado al cliente
         Pedido_Implementado pedido = new Pedido_Implementado(cliente);
@@ -150,7 +157,9 @@ public class Main {
                     continuarSeleccionando = false;
                 }
             } else {
+                System.out.println("=============================================================================");
                 System.out.println("Opción inválida. Por favor, ingrese un número de pizza válido.");
+                System.out.println("=============================================================================");
             }
 
             // Agregar las pizzas seleccionadas al pedido

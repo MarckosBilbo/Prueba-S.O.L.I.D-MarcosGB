@@ -11,4 +11,3 @@ public interface Pedido {
     double getPrecioTotal(); // Retorna el precio total del pedido
     void calcularPrecioTotal(); // Calcula y actualiza el precio total del pedido
 }
-
