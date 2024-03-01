@@ -10,6 +10,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean salir = false;
 
+        // Menú principal con las cositas que se pueden hacer
         while (!salir) {
             System.out.println("=============================================================================");
             System.out.println("¿Qué desea hacer?");
@@ -39,6 +40,7 @@ public class Main {
         scanner.close();
     }
 
+    //Metodo para registrar un nuevo usuario en base a su nombre, direccion y telefono
     private static void registrarNuevoUsuario(Scanner scanner) {
         System.out.println("=============================================================================");
         System.out.println("Por favor, ingrese su nombre:");
@@ -62,6 +64,7 @@ public class Main {
         System.out.println("Usuario registrado exitosamente.");
     }
 
+    //Metodo para iniciar sesion con un usuario ya registrado
     private static void iniciarSesion(Scanner scanner) {
         System.out.println("=============================================================================");
         System.out.println("Por favor, ingrese su nombre de usuario:");
@@ -90,7 +93,7 @@ public class Main {
                 System.out.println("=============================================================================");
                 System.out.println("1. Hacer un nuevo pedido");
                 System.out.println("2. Ver pedidos existentes");
-                System.out.println("3. Borrar un pedido existente");
+                System.out.println("3. Borrar pedidos existentes");
                 System.out.println("4. Cerrar sesión");
                 String opcion = scanner.nextLine();
 
@@ -125,6 +128,7 @@ public class Main {
 
     // Métodos para realizar un pedido
     private static void realizarPedido(Cliente_Implementado cliente, OrderManager_Implementado orderManager, Menu_Implementado menu, Scanner scanner) {
+
         // Crear un pedido asociado al cliente
         Pedido_Implementado pedido = new Pedido_Implementado(cliente);
 
@@ -132,7 +136,9 @@ public class Main {
         System.out.println("=============================================================================");
         System.out.println("Bienvenido al restaurante. Este es nuestro menú:");
         System.out.println("=============================================================================");
+        //el momento en el que este cambia se cerrara el ciclo de seleccion de pizzas
         boolean continuarSeleccionando = true;
+
         while (continuarSeleccionando) {
             List<String> pizzasDisponibles = menu.obtenerPizzasDisponibles();
             for (int i = 0; i < pizzasDisponibles.size(); i++) {
@@ -175,6 +181,7 @@ public class Main {
         orderManager.createOrder(pedido);
     }
 
+    // Métodos para ver todos los pedios de los clientes
     public static void verPedidos(Cliente_Implementado cliente, OrderManager_Implementado orderManager) {
         System.out.println("=============================================================================");
         System.out.println("Lista de todos los pedidos:");
@@ -182,6 +189,7 @@ public class Main {
         orderManager.checkOrder();
     }
 
+    //Metodo para borrar todos los pedidos que haya guardados
     public static void borrarPedidos(OrderManager_Implementado orderManager) {
         orderManager.deleteOrder(); // Llama directamente al método deleteOrder para eliminar todos los pedidos
     }
